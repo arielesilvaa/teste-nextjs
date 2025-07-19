@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cadastro de Produtos
 
-## Getting Started
+Este é um projeto simples de Cadastro de Produtos utilizando **Next.js 13**, **React**, e **Prisma** como ORM para manipulação de dados no banco de dados. A aplicação permite que os usuários cadastrem produtos, listem produtos cadastrados, excluam produtos e mostrem as informações dos produtos na interface.
 
-First, run the development server:
+## Funcionalidades
+* **Cadastrar Produtos**: O usuário pode adicionar novos produtos à lista fornecendo nome, preço e SKU.  
+* **Listar Produtos**: A lista de produtos cadastrados é exibida na página inicial.  
+* **Excluir Produtos**: O usuário pode excluir um produto da lista clicando no botão "Remover".  
+* **Atualização da Lista**: Após a exclusão de um produto, a lista de produtos é recarregada da API para refletir a remoção.
 
+## Tecnologias Usadas
+* **Next.js 13** (para o frontend e backend)
+* **React** (para a interface do usuário)
+* **Prisma** (ORM para interação com o banco de dados)
+* **SQLite** (banco de dados leve utilizado para armazenar os produtos)
+
+## Como Rodar o Projeto Localmente
+
+### 1. Clonar o Repositório
 ```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+2. Instalar as Dependências
+Instale as dependências do projeto utilizando o npm ou yarn.
+
+bash
+Copiar
+npm install
+# ou
+yarn install
+3. Configurar o Banco de Dados
+O projeto utiliza o Prisma para comunicação com o banco de dados. Para configurar o banco de dados, execute o seguinte comando para gerar as tabelas no banco de dados:
+
+bash
+Copiar
+npx prisma migrate dev --name init
+Esse comando cria o banco de dados e aplica a migração inicial definida no modelo do Prisma.
+
+4. Executar o Projeto
+Agora, você pode rodar o projeto localmente com o comando:
+
+bash
+Copiar
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O servidor será iniciado na URL http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Estrutura do Projeto
+src/app/page.tsx: Componente principal que exibe o formulário de cadastro e a lista de produtos.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+src/app/api/products: Contém as rotas da API para:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+GET /api/products: Retorna todos os produtos cadastrados.
 
-## Learn More
+POST /api/products: Cadastra um novo produto.
 
-To learn more about Next.js, take a look at the following resources:
+DELETE /api/products/:id: Exclui um produto com o id especificado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib/prisma.ts: Arquivo responsável pela configuração e conexão com o Prisma.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+prisma/schema.prisma: Define o modelo de dados para o Prisma, incluindo o modelo de produto.
 
-## Deploy on Vercel
+Como Funciona a Exclusão de Produtos
+Requisição de Exclusão: Quando um usuário clica no botão "Remover", o frontend envia uma requisição DELETE para a API com o id do produto.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Recarregar a Lista: Após a exclusão do produto, o frontend faz uma nova requisição GET para a API para recarregar a lista de produtos atualizada. A UI é então atualizada automaticamente para refletir a exclusão.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Considerações Finais
+Esse projeto demonstra uma aplicação simples de CRUD (Criar, Ler, Atualizar, Deletar) usando o Next.js 13, o que permite tanto a renderização no lado do servidor quanto a interação com a API de maneira eficiente.
+
+Licença
+Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+
+
+
+
