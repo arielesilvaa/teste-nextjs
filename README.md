@@ -2,8 +2,13 @@
 
 Este é um projeto simples de Cadastro de Produtos utilizando **Next.js 13**, **React**, e **Prisma** como ORM para manipulação de dados no banco de dados. A aplicação permite que os usuários cadastrem produtos, listem produtos cadastrados, excluam produtos e mostrem as informações dos produtos na interface.
 
+<img width="1021" height="686" alt="Captura de Tela 2025-07-18 às 23 03 11" src="https://github.com/user-attachments/assets/228966c8-0b7d-44df-a19f-218a7f09b36b" />
+
+
+
 ## Funcionalidades
-* **Cadastrar Produtos**: O usuário pode adicionar novos produtos à lista fornecendo nome, preço e SKU.  
+* **Cadastrar Produtos**: O usuário pode adicionar novos produtos
+à lista fornecendo nome, preço e SKU.  
 * **Listar Produtos**: A lista de produtos cadastrados é exibida na página inicial.  
 * **Excluir Produtos**: O usuário pode excluir um produto da lista clicando no botão "Remover".  
 * **Atualização da Lista**: Após a exclusão de um produto, a lista de produtos é recarregada da API para refletir a remoção.
@@ -18,8 +23,8 @@ Este é um projeto simples de Cadastro de Produtos utilizando **Next.js 13**, **
 
 ### 1. Clonar o Repositório
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/arielesilvaa/teste-nextjs.git
+cd teste-nextjs
 2. Instalar as Dependências
 Instale as dependências do projeto utilizando o npm ou yarn.
 
@@ -72,6 +77,7 @@ Esse projeto demonstra uma aplicação simples de CRUD (Criar, Ler, Atualizar, D
 Licença
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
+Desenvolvido por Ariele Silva 
 
 
 
